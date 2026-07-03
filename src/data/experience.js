@@ -1,0 +1,57 @@
+export const experiences = [
+  {
+    id: 1,
+    institution: 'President University',
+    role: 'Computer Science Student',
+    period: '2024 – Present',
+    type: 'education',
+    icon: '🎓',
+    details: [
+      'Specializing in Artificial Intelligence',
+      'Academic Scholarship Awardee: 75% Tuition Fee Subsidy (Rank 2)',
+      'Focus on Artificial Intelligence, Machine Learning, NLP, Computer Vision, and Data Science',
+      'Related Courses: Artificial Intelligence, Deep Learning, Image Processing and Recognition, Natural Language Processing, Data Science and Predictive Analytics, Virtual Reality (VR) and IoT (Wearable Devices), Software Engineering, Web Programming, Server-Side Internet Programming, Object Oriented and Visual Programming, Database System.',
+    ],
+  },
+  {
+    id: 2,
+    institution: 'PUFA (BEM) Computer Science',
+    role: 'Member — Entrepreneurship Division',
+    period: '2024 – 2025',
+    type: 'organization',
+    icon: '🤝',
+    details: [
+      'Managing fundraising initiatives for campus events',
+      'Sponsorship acquisition from industry partners',
+      'Building and maintaining industry partnerships',
+    ],
+  },
+  {
+    id: 3,
+    institution: 'PUFA (BEM) Computer Science',
+    role: 'Head — Entrepreneurship Division',
+    period: '2025 – Present',
+    type: 'organization',
+    icon: '🚀',
+    details: [
+      'Lead and manage the entrepreneurship division',
+      'Develop business strategies and revenue targets',
+      'Seek and secure sponsors for events organized by PUFA Computer Science',
+      'Manage sales of official Faculty of Computer Science merchandise (CompScie Merch)',
+      'Compile and publish student business ideas through the PUFA Computer Science Instagram account',
+      'Organizing and conducting Company Visit events for Computer Science students',
+    ],
+  },
+  {
+    id: 4,
+    institution: 'Novotech',
+    role: 'Marketing & Backend Developer',
+    period: '2025 – Present',
+    type: 'work',
+    details: [
+      'Co-founded a digital service team providing web development and digitalization solutions for local SMEs.',
+      'Developed and maintained backend systems for client websites and related technologies.',
+      'Responsible for marketing and client relations, driving outreach to potential SME clients.',
+    ],
+  },
+]

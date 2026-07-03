@@ -1,0 +1,286 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-onyx: #0A0A0A;
+    --color-blue-slate: #536878;
+    --color-alabaster: #E5E4E2;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    background-attachment: fixed;
+    min-height: 100vh;
+  }
+
+  /* Dark mode — Onyx → Blue Slate → Alabaster vertical gradient */
+  html.dark body {
+    background: linear-gradient(to bottom,
+      #0A0A0A 0%,
+      #111820 15%,
+      #1a2530 30%,
+      #253545 45%,
+      #3a5060 60%,
+      #536878 75%,
+      #9aa8b2 88%,
+      #E5E4E2 100%
+    );
+    color: #ffffff;
+  }
+
+  /* Light mode — inverted palette */
+  html.light body {
+    background: linear-gradient(to bottom,
+      #E5E4E2 0%,
+      #c8d0d8 25%,
+      #9aa8b2 50%,
+      #536878 75%,
+      #1a2530 100%
+    );
+    color: #0A0A0A;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: #0A0A0A; }
+  ::-webkit-scrollbar-thumb { background: #536878; border-radius: 2px; }
+  ::-webkit-scrollbar-thumb:hover { background: #E5E4E2; }
+
+  ::selection {
+    background: rgba(83, 104, 120, 0.4);
+    color: #E5E4E2;
+  }
+}
+
+@layer components {
+  /* Noise texture overlay */
+  .noise-overlay {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.025;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+    background-size: 200px 200px;
+    mix-blend-mode: overlay;
+  }
+
+  /* Glass card — dark mode */
+  .glass-card {
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(20px) saturate(140%);
+    -webkit-backdrop-filter: blur(20px) saturate(140%);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    transition: background 0.3s ease, border-color 0.3s ease, transform 0.25s ease, box-shadow 0.3s ease;
+  }
+
+  .glass-card:hover {
+    background: rgba(255, 255, 255, 0.07);
+    border-color: rgba(255, 255, 255, 0.13);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(83, 104, 120, 0.15);
+  }
+
+  /* Light mode glass card */
+  html.light .glass-card {
+    background: rgba(255, 255, 255, 0.35);
+    border-color: rgba(255, 255, 255, 0.55);
+  }
+
+  html.light .glass-card:hover {
+    background: rgba(255, 255, 255, 0.5);
+    border-color: rgba(255, 255, 255, 0.7);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(83, 104, 120, 0.15);
+  }
+
+  /* Animated grid background */
+  .grid-bg {
+    background-image:
+      linear-gradient(rgba(83, 104, 120, 0.1) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(83, 104, 120, 0.1) 1px, transparent 1px);
+    background-size: 60px 60px;
+    animation: gridMove 25s linear infinite;
+  }
+
+  /* Section label */
+  .section-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #536878;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  /* Typography */
+  .heading-xl {
+    font-family: 'Clash Display', sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+  }
+
+  .heading-lg {
+    font-family: 'Clash Display', sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+  }
+
+  /* Tech chip */
+  .tech-chip {
+    display: inline-flex;
+    align-items: center;
+    padding: 2px 10px;
+    border-radius: 100px;
+    font-size: 0.7rem;
+    font-weight: 500;
+    background: rgba(83, 104, 120, 0.12);
+    border: 1px solid rgba(83, 104, 120, 0.25);
+    color: #8aa4b8;
+    transition: all 0.2s ease;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .tech-chip:hover {
+    background: rgba(83, 104, 120, 0.25);
+    border-color: rgba(83, 104, 120, 0.45);
+    color: #E5E4E2;
+  }
+
+  /* Marquee container */
+  .marquee-wrapper {
+    overflow: hidden;
+    width: 100%;
+    mask-image: linear-gradient(90deg, transparent 0%, black 8%, black 92%, transparent 100%);
+    -webkit-mask-image: linear-gradient(90deg, transparent 0%, black 8%, black 92%, transparent 100%);
+  }
+
+  .marquee-track {
+    display: flex;
+    gap: 12px;
+    width: max-content;
+    padding: 4px 0;
+  }
+
+  .marquee-track.forward {
+    animation: marquee 30s linear infinite;
+  }
+
+  .marquee-track.reverse {
+    animation: marqueeReverse 32s linear infinite;
+  }
+
+  /* Form inputs */
+  .form-input {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    border-radius: 12px;
+    padding: 12px 16px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.875rem;
+    color: #E5E4E2;
+    outline: none;
+    transition: all 0.2s ease;
+  }
+
+  .form-input:focus {
+    border-color: rgba(255, 255, 255, 0.30);
+    background: rgba(255, 255, 255, 0.07);
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.04);
+  }
+
+  .form-input::placeholder {
+    color: rgba(255, 255, 255, 0.30);
+  }
+
+  .form-input.error {
+    border-color: rgba(239, 68, 68, 0.5);
+    box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.08);
+  }
+
+  /* Light mode form */
+  html.light .form-input {
+    background: rgba(0, 0, 0, 0.04);
+    border-color: rgba(0, 0, 0, 0.1);
+    color: #0A0A0A;
+  }
+
+  html.light .form-input:focus {
+    border-color: rgba(83, 104, 120, 0.5);
+    background: rgba(0, 0, 0, 0.06);
+  }
+
+  html.light .form-input::placeholder {
+    color: rgba(10, 10, 10, 0.25);
+  }
+
+  /* Swiper overrides */
+  .swiper-button-next,
+  .swiper-button-prev {
+    display: none !important;
+  }
+
+  /* Solar system orbit */
+  .orbit-inner {
+    animation: orbit-inner 8s linear infinite;
+  }
+  .orbit-outer {
+    animation: orbit-outer 14s linear infinite;
+  }
+  .orbit-inner .planet {
+    animation: counter-orbit-inner 8s linear infinite;
+  }
+  .orbit-outer .planet {
+    animation: counter-orbit-outer 14s linear infinite;
+  }
+
+}
+
+@keyframes orbit-inner {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to   { transform: translate(-50%, -50%) rotate(360deg); }
+}
+@keyframes orbit-outer {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to   { transform: translate(-50%, -50%) rotate(-360deg); }
+}
+@keyframes counter-orbit-inner {
+  from { transform: translateX(-50%) rotate(0deg); }
+  to   { transform: translateX(-50%) rotate(-360deg); }
+}
+@keyframes counter-orbit-outer {
+  from { transform: translateX(-50%) rotate(0deg); }
+  to   { transform: translateX(-50%) rotate(360deg); }
+}
+
+@layer utilities {
+  .clip-gradient {
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+}
