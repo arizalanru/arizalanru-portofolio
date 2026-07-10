@@ -22,8 +22,8 @@ export default function CertCard({ cert }) {
       {/* Card */}
       <motion.div
         onClick={() => setOpen(true)}
-        className="relative overflow-hidden rounded-2xl cursor-pointer flex-shrink-0"
-        style={{ width: 320, height: 226 }}
+        className="relative overflow-hidden rounded-2xl cursor-pointer flex-shrink-0 w-full max-w-[320px]"
+        style={{ height: 226 }}
         whileHover={{ y: -8, boxShadow: '0 20px 40px rgba(0,0,0,0.4)' }}
         transition={{ duration: 0.3, ease: 'easeOut' }}
       >

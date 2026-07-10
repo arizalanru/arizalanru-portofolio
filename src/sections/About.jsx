@@ -30,7 +30,7 @@ const ease = [0.25, 0.46, 0.45, 0.94]
 
 export default function About() {
   return (
-    <section id="about" className="relative h-screen flex items-center overflow-hidden snap-start px-6">
+    <section id="about" className="relative min-h-screen md:h-screen flex items-center overflow-x-hidden md:overflow-hidden snap-start px-6 py-20 md:py-0">
       <div className="max-w-4xl mx-auto w-full flex flex-col items-center gap-8">
 
         {/* 1. Header */}
@@ -38,7 +38,7 @@ export default function About() {
 
         {/* 2. Paragraph */}
         <motion.p
-          className="text-white/60 text-[15px] leading-relaxed text-center"
+          className="text-white/60 text-sm md:text-[15px] leading-relaxed text-left md:text-center px-4 md:px-0"
           style={{ maxWidth: '65ch' }}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -64,11 +64,11 @@ export default function About() {
         </motion.p>
 
         {/* 3. Cards */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 w-full">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 w-full px-4 md:px-0">
           {cards.map(({ icon: Icon, title, subtitle }, i) => (
             <motion.div
               key={title}
-              className="flex flex-col gap-3 px-5 py-4 rounded-xl cursor-default"
+              className="flex flex-col gap-3 p-3 md:px-5 md:py-4 rounded-xl cursor-default overflow-hidden"
               style={{
                 background: 'rgba(255,255,255,0.05)',
                 border: '1px solid rgba(255,255,255,0.10)',
@@ -89,8 +89,8 @@ export default function About() {
                 <Icon size={16} strokeWidth={1.5} className="text-white/70" />
               </div>
               <div>
-                <p className="text-sm font-medium text-white leading-tight">{title}</p>
-                <p className="text-xs text-white/50 mt-0.5 leading-snug">{subtitle}</p>
+                <p className="text-[13px] md:text-sm font-medium text-white leading-tight">{title}</p>
+                <p className="text-[11px] md:text-xs text-white/50 mt-0.5 leading-snug">{subtitle}</p>
               </div>
             </motion.div>
           ))}

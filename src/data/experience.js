@@ -8,9 +8,11 @@ export const experiences = [
     icon: '🎓',
     details: [
       'Specializing in Artificial Intelligence',
+      'GPA: 3.69/4.00 | Expected Graduation: 2027',
       'Academic Scholarship Awardee: 75% Tuition Fee Subsidy (Rank 2)',
       'Focus on Artificial Intelligence, Machine Learning, NLP, Computer Vision, and Data Science',
       'Related Courses: Artificial Intelligence, Deep Learning, Image Processing and Recognition, Natural Language Processing, Data Science and Predictive Analytics, Virtual Reality (VR) and IoT (Wearable Devices), Software Engineering, Web Programming, Server-Side Internet Programming, Object Oriented and Visual Programming, Database System.',
+      ,
     ],
   },
   {
@@ -34,12 +36,9 @@ export const experiences = [
     type: 'organization',
     icon: '🚀',
     details: [
-      'Lead and manage the entrepreneurship division',
-      'Develop business strategies and revenue targets',
-      'Seek and secure sponsors for events organized by PUFA Computer Science',
-      'Manage sales of official Faculty of Computer Science merchandise (CompScie Merch)',
-      'Compile and publish student business ideas through the PUFA Computer Science Instagram account',
-      'Organizing and conducting Company Visit events for Computer Science students',
+      'Lead a 6-person division; launched a faculty merchandise line purchased by 160+ students, generating ~IDR 5.1 million net profit for the organization\'s treasury.',
+      'Chaired the sponsorship division for 3 faculty events; secured IDR 56 million in cash sponsorships for Compsphere, the faculty\'s flagship annual event.',
+      'Initiated the faculty\'s first company visit program, serving as vice chair (Indonesia Stock Exchange) and supervisor (Indosat Marvelous Xperience Center).',
     ],
   },
   {
@@ -49,9 +48,8 @@ export const experiences = [
     period: '2025 – Present',
     type: 'work',
     details: [
-      'Co-founded a digital service team providing web development and digitalization solutions for local SMEs.',
-      'Developed and maintained backend systems for client websites and related technologies.',
-      'Responsible for marketing and client relations, driving outreach to potential SME clients.',
+      'Co-founded a digital services team providing web development and digitalization solutions for local SMEs; delivered and maintain a client website for ADA Property.',
+      'Led marketing and client relations, driving outreach to prospective SME clients.',
     ],
   },
 ]

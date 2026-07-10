@@ -59,7 +59,17 @@
       "Bash(node /tmp/dims.mjs)",
       "Bash(node *)",
       "Bash(awk '$1>307200 {print \"OVER CERT TARGET:\", $0} $1>204800 {print \"check:\", $0}')",
-      "Bash(awk '$1>153600')"
+      "Bash(awk '$1>153600')",
+      "Bash(netstat -ano)",
+      "Read(//tmp/**)",
+      "Skill(run)",
+      "Bash(chromium-cli --help)",
+      "Bash(npx playwright *)",
+      "Bash(npm uninstall *)",
+      "Bash(curl -sf http://localhost:5173/ -o /dev/null -w \"http_code:%{http_code}\\\\n\" --max-time 5)",
+      "Bash(npx vite *)",
+      "Bash(git checkout *)",
+      "Bash(git clean *)"
     ]
   }
 }

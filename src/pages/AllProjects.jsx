@@ -49,12 +49,12 @@ export default function AllProjects() {
 
           {/* Filter tabs */}
           <p className="text-xs tracking-widest uppercase text-white/50 mt-4 mb-3">Filter by Category</p>
-          <div className="flex flex-wrap gap-2">
+          <div className="filter-tabs flex flex-nowrap md:flex-wrap gap-2 overflow-x-auto md:overflow-visible pb-2 md:pb-0 scrollbar-hide">
             {categories.map((cat) => (
               <motion.button
                 key={cat}
                 onClick={() => setActive(cat)}
-                className={`px-4 py-2 rounded-full text-sm transition-all ${active === cat
+                className={`filter-tab whitespace-nowrap flex-shrink-0 px-4 py-2 rounded-full text-sm transition-all ${active === cat
                   ? 'bg-white text-onyx font-semibold'
                   : 'glass-card text-white/50 hover:text-white'
                   }`}
@@ -71,7 +71,7 @@ export default function AllProjects() {
         <AnimatePresence mode="wait">
           <motion.div
             key={active}
-            className="grid md:grid-cols-2 gap-5"
+            className="grid grid-cols-1 md:grid-cols-2 gap-5"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
@@ -84,7 +84,7 @@ export default function AllProjects() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.08 }}
               >
-                <ProjectCard project={project} />
+                <ProjectCard project={project} fixedHeight />
               </motion.div>
             ))}
           </motion.div>

@@ -1,7 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 
-export default function SectionLabel({ label, title, subtitle, center = false, light = false }) {
+export default function SectionLabel({ label, title, subtitle, center = false, light = false, titleClassName }) {
   return (
     <div className={`mb-5 ${center ? 'text-center' : ''}`}>
       <motion.p
@@ -14,7 +14,7 @@ export default function SectionLabel({ label, title, subtitle, center = false, l
         — {label}
       </motion.p>
       <motion.h2
-        className={`heading-xl text-4xl md:text-5xl ${light ? 'text-onyx' : 'text-white'}`}
+        className={`heading-xl ${titleClassName || 'text-4xl md:text-5xl'} ${light ? 'text-onyx' : 'text-white'}`}
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}

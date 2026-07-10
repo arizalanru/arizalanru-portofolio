@@ -39,10 +39,10 @@ export default function Hero() {
       />
 
       <div className="relative z-10 w-full max-w-6xl mx-auto">
-        <div className="flex items-center gap-12 lg:gap-16">
+        <div className="flex flex-col md:flex-row items-start md:items-center gap-8 md:gap-12 lg:gap-16">
 
           {/* LEFT: text content */}
-          <div className="flex-1 min-w-0">
+          <div className="order-2 md:order-1 flex-1 min-w-0">
             <motion.h1
               className="heading-xl text-[clamp(2.6rem,6vw,5.5rem)] text-white leading-[1.05] mb-4"
               initial={{ opacity: 0, y: 40 }}
@@ -115,7 +115,9 @@ export default function Hero() {
               transition={{ duration: 0.55, delay: 1.05, ease }}
             >
               <motion.a
-                href="#"
+                href="https://drive.google.com/file/d/1za-WFod7-xgHIHHZFtNBAPo57qQyI6zh/view?usp=drive_link"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white text-onyx text-sm font-semibold hover:bg-alabaster transition-colors shadow-lg"
                 whileHover={{ scale: 1.03, y: -1 }}
                 whileTap={{ scale: 0.97 }}
@@ -126,8 +128,8 @@ export default function Hero() {
             </motion.div>
           </div>
 
-          {/* RIGHT: profile card */}
-          <div className="hidden md:flex flex-[0_0_38%] items-center justify-center">
+          {/* RIGHT: profile card (photo shows on mobile too, above text) */}
+          <div className="order-1 md:order-2 self-center md:self-auto flex md:flex-[0_0_38%] items-center justify-center">
             <ProfileCard />
           </div>
 
@@ -140,7 +142,7 @@ export default function Hero() {
 function ProfileCard() {
   return (
     <motion.div
-      className="w-full"
+      className="w-[100px] md:w-full"
       initial={{ opacity: 0, x: 50, scale: 0.97 }}
       animate={{ opacity: 1, x: 0, scale: 1 }}
       transition={{ duration: 0.75, delay: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}

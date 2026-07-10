@@ -23,7 +23,7 @@ function FreshScanSections({ project: p }) {
       {/* 00 — Overview */}
       <ScrollReveal delay={0.05}>
         <div className="relative">
-          <span className="heading-xl absolute -top-8 -left-2 text-8xl font-bold text-white/[0.03] select-none pointer-events-none">00</span>
+          <span className="heading-xl absolute -top-8 -left-2 text-6xl md:text-8xl font-bold text-white/[0.03] select-none pointer-events-none">00</span>
           <p className="section-label mb-3">00 — Overview</p>
           <h2 className="heading-lg text-2xl text-white mb-6">Overview</h2>
           <p className="text-white/55 leading-relaxed text-[15px]">{p.overview}</p>
@@ -34,7 +34,7 @@ function FreshScanSections({ project: p }) {
       {/* 01 — Introduction */}
       <ScrollReveal delay={0.05}>
         <div className="relative">
-          <span className="heading-xl absolute -top-8 -left-2 text-8xl font-bold text-white/[0.03] select-none pointer-events-none">01</span>
+          <span className="heading-xl absolute -top-8 -left-2 text-6xl md:text-8xl font-bold text-white/[0.03] select-none pointer-events-none">01</span>
           <p className="section-label mb-3">01 — Introduction</p>
           <h2 className="heading-lg text-2xl text-white mb-6">Introduction</h2>
           <p className="text-white/55 leading-relaxed text-[15px]">{p.problem}</p>
@@ -45,7 +45,7 @@ function FreshScanSections({ project: p }) {
       {/* 02 — Tools & Technologies */}
       <ScrollReveal delay={0.05}>
         <div className="relative">
-          <span className="heading-xl absolute -top-8 -left-2 text-8xl font-bold text-white/[0.03] select-none pointer-events-none">02</span>
+          <span className="heading-xl absolute -top-8 -left-2 text-6xl md:text-8xl font-bold text-white/[0.03] select-none pointer-events-none">02</span>
           <p className="section-label mb-3">02 — Tools & Technologies</p>
           <h2 className="heading-lg text-2xl text-white mb-6">Tools & Technologies</h2>
           <p className="text-white/55 leading-relaxed text-[15px] mb-5">{p.architecture}</p>
@@ -71,10 +71,10 @@ function FreshScanSections({ project: p }) {
       {p.datasetSection && (
         <ScrollReveal delay={0.05}>
           <div className="relative">
-            <span className="heading-xl absolute -top-8 -left-2 text-8xl font-bold text-white/[0.03] select-none pointer-events-none">03</span>
+            <span className="heading-xl absolute -top-8 -left-2 text-6xl md:text-8xl font-bold text-white/[0.03] select-none pointer-events-none">03</span>
             <p className="section-label mb-3">03 — Dataset</p>
             <h2 className="heading-lg text-2xl text-white mb-6">Dataset</h2>
-            <div className="grid grid-cols-2 gap-4 mb-5">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-5">
               {p.datasetSection.classes.map((cls, i) => (
                 <div key={i} className="glass-card p-4 rounded-xl">
                   <p className="text-sm text-white/70 font-medium mb-2">{cls.label}</p>
@@ -104,7 +104,7 @@ function FreshScanSections({ project: p }) {
       {p.trainingFigure && (
         <ScrollReveal delay={0.05}>
           <div className="relative">
-            <span className="heading-xl absolute -top-8 -left-2 text-8xl font-bold text-white/[0.03] select-none pointer-events-none">04</span>
+            <span className="heading-xl absolute -top-8 -left-2 text-6xl md:text-8xl font-bold text-white/[0.03] select-none pointer-events-none">04</span>
             <p className="section-label mb-3">04 — System Workflow & Training</p>
             <h2 className="heading-lg text-2xl text-white mb-6">System Workflow & Training</h2>
             <SectionImg {...p.trainingFigure} />
@@ -117,7 +117,7 @@ function FreshScanSections({ project: p }) {
       {p.evaluationFigures && (
         <ScrollReveal delay={0.05}>
           <div className="relative">
-            <span className="heading-xl absolute -top-8 -left-2 text-8xl font-bold text-white/[0.03] select-none pointer-events-none">05</span>
+            <span className="heading-xl absolute -top-8 -left-2 text-6xl md:text-8xl font-bold text-white/[0.03] select-none pointer-events-none">05</span>
             <p className="section-label mb-3">05 — Model Evaluation</p>
             <h2 className="heading-lg text-2xl text-white mb-6">Model Evaluation</h2>
             {p.evaluationFigures.map((fig, i) => <SectionImg key={i} {...fig} />)}
@@ -130,11 +130,11 @@ function FreshScanSections({ project: p }) {
       {p.modelComparison && (
         <ScrollReveal delay={0.05}>
           <div className="relative">
-            <span className="heading-xl absolute -top-8 -left-2 text-8xl font-bold text-white/[0.03] select-none pointer-events-none">06</span>
+            <span className="heading-xl absolute -top-8 -left-2 text-6xl md:text-8xl font-bold text-white/[0.03] select-none pointer-events-none">06</span>
             <p className="section-label mb-3">06 — Model Comparison & Selection</p>
             <h2 className="heading-lg text-2xl text-white mb-6">Model Comparison & Selection</h2>
             <div className="overflow-x-auto mb-2">
-              <table className="w-full text-sm">
+              <table className="w-full text-sm whitespace-nowrap">
                 <thead>
                   <tr className="border-b border-white/10">
                     <th className="text-left py-2 pr-4 text-white/40 font-medium">Model</th>
@@ -167,11 +167,11 @@ function FreshScanSections({ project: p }) {
       {p.webAppFigures && (
         <ScrollReveal delay={0.05}>
           <div className="relative">
-            <span className="heading-xl absolute -top-8 -left-2 text-8xl font-bold text-white/[0.03] select-none pointer-events-none">07</span>
+            <span className="heading-xl absolute -top-8 -left-2 text-6xl md:text-8xl font-bold text-white/[0.03] select-none pointer-events-none">07</span>
             <p className="section-label mb-3">07 — Web Application</p>
             <h2 className="heading-lg text-2xl text-white mb-6">Web Application</h2>
             {p.solutionCards && (
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-4">
                 {p.solutionCards.map((card, i) => (
                   <motion.div
                     key={i}
@@ -197,7 +197,7 @@ function FreshScanSections({ project: p }) {
       {p.limitations && (
         <ScrollReveal delay={0.05}>
           <div className="relative">
-            <span className="heading-xl absolute -top-8 -left-2 text-8xl font-bold text-white/[0.03] select-none pointer-events-none">08</span>
+            <span className="heading-xl absolute -top-8 -left-2 text-6xl md:text-8xl font-bold text-white/[0.03] select-none pointer-events-none">08</span>
             <p className="section-label mb-3">08 — Limitations</p>
             <h2 className="heading-lg text-2xl text-white mb-6">Limitations</h2>
             <div className="space-y-4">
@@ -335,7 +335,7 @@ export default function ProjectDetail() {
   }
 
   return (
-    <div className="min-h-screen pt-24 pb-20 px-6" style={{ background: 'linear-gradient(to bottom, #0A0A0A 0%, #536878 50%, #E5E4E2 100%)', backgroundAttachment: 'fixed' }}>
+    <div className="min-h-screen w-full overflow-x-hidden pt-24 pb-20 px-4 md:px-6" style={{ background: 'linear-gradient(to bottom, #0A0A0A 0%, #536878 50%, #E5E4E2 100%)', backgroundAttachment: 'fixed' }}>
       <div className="max-w-4xl mx-auto">
 
         {/* Top bar */}
@@ -380,11 +380,11 @@ export default function ProjectDetail() {
               <Badge key={cat} text={cat} color="slate" />
             ))}
           </div>
-          <h1 className="heading-xl text-6xl md:text-7xl text-white mb-2 leading-none">
+          <h1 className="heading-xl text-3xl md:text-6xl lg:text-7xl text-white mb-2 leading-none">
             {project.title}
           </h1>
           {project.subtitle && (
-            <p className="text-lg text-white/35 mb-4">{project.subtitle}</p>
+            <p className="text-sm md:text-lg text-white/35 mb-4">{project.subtitle}</p>
           )}
           <p className="text-xl text-white/50 leading-relaxed max-w-2xl mb-8">
             {project.description}
@@ -428,7 +428,7 @@ export default function ProjectDetail() {
           {project.overview && (
             <ScrollReveal delay={0.05}>
               <div className="relative">
-                <span className="heading-xl absolute -top-8 -left-2 text-8xl font-bold text-white/[0.03] select-none pointer-events-none">00</span>
+                <span className="heading-xl absolute -top-8 -left-2 text-6xl md:text-8xl font-bold text-white/[0.03] select-none pointer-events-none">00</span>
                 <p className="section-label mb-3">00 — Overview</p>
                 <h2 className="heading-lg text-2xl text-white mb-6">Overview</h2>
                 <p className="text-white/55 leading-relaxed text-[15px]">{project.overview}</p>
@@ -441,7 +441,7 @@ export default function ProjectDetail() {
           {project.problem && (
             <ScrollReveal delay={0.05}>
               <div className="relative">
-                <span className="heading-xl absolute -top-8 -left-2 text-8xl font-bold text-white/[0.03] select-none pointer-events-none">01</span>
+                <span className="heading-xl absolute -top-8 -left-2 text-6xl md:text-8xl font-bold text-white/[0.03] select-none pointer-events-none">01</span>
                 <p className="section-label mb-3">01 — The Problem</p>
                 <h2 className="heading-lg text-2xl text-white mb-6">The Problem</h2>
                 <p className="text-white/55 leading-relaxed text-[15px]">{project.problem}</p>
@@ -454,12 +454,12 @@ export default function ProjectDetail() {
           {project.solution && (
             <ScrollReveal delay={0.05}>
               <div className="relative">
-                <span className="heading-xl absolute -top-8 -left-2 text-8xl font-bold text-white/[0.03] select-none pointer-events-none">02</span>
+                <span className="heading-xl absolute -top-8 -left-2 text-6xl md:text-8xl font-bold text-white/[0.03] select-none pointer-events-none">02</span>
                 <p className="section-label mb-3">02 — Solution Approach</p>
                 <h2 className="heading-lg text-2xl text-white mb-6">Solution Approach</h2>
                 <p className="text-white/55 leading-relaxed text-[15px]">{project.solution}</p>
                 {project.solutionCards && (
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mt-6">
                     {project.solutionCards.map((card, i) => (
                       <motion.div
                         key={i}
@@ -495,7 +495,7 @@ export default function ProjectDetail() {
           {project.architecture && (
             <ScrollReveal delay={0.05}>
               <div className="relative">
-                <span className="heading-xl absolute -top-8 -left-2 text-8xl font-bold text-white/[0.03] select-none pointer-events-none">03</span>
+                <span className="heading-xl absolute -top-8 -left-2 text-6xl md:text-8xl font-bold text-white/[0.03] select-none pointer-events-none">03</span>
                 <p className="section-label mb-3">03 — Technical Architecture</p>
                 <h2 className="heading-lg text-2xl text-white mb-6">Technical Architecture</h2>
                 <p className="text-white/55 leading-relaxed text-[15px]">{project.architecture}</p>
@@ -534,10 +534,10 @@ export default function ProjectDetail() {
           {project.slug === 'fintrack' && project.interfacePreviews && (
             <ScrollReveal delay={0.05}>
               <div className="relative">
-                <span className="heading-xl absolute -top-8 -left-2 text-8xl font-bold text-white/[0.03] select-none pointer-events-none">04</span>
+                <span className="heading-xl absolute -top-8 -left-2 text-6xl md:text-8xl font-bold text-white/[0.03] select-none pointer-events-none">04</span>
                 <p className="section-label mb-3">04 — Interface Preview</p>
                 <h2 className="heading-lg text-2xl text-white mb-6">Interface Preview</h2>
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px' }}>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                   {project.interfacePreviews.map((preview, i) => (
                     <div key={i}>
                       <img
@@ -562,7 +562,7 @@ export default function ProjectDetail() {
               <h2 className="heading-lg text-2xl text-white mb-6">Key Technical Implementations</h2>
               {renderKeyImplementations(project.keyImplementations)}
               {project.slug !== 'fintrack' && (project.interfacePreviews?.[2] || project.interfacePreviews?.[3]) && (
-                <div className="grid grid-cols-2 gap-4 mt-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
                   {project.interfacePreviews[2] && (
                     <div>
                       <img

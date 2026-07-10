@@ -53,9 +53,9 @@ export default function Navbar() {
         style={{ pointerEvents: 'auto' }}
       >
 
-        {/* Left links — absolutely anchored to the left edge of the icon wrapper */}
+        {/* Left links — absolutely anchored to the left edge of the icon wrapper (desktop only) */}
         <div
-          className="absolute flex items-center"
+          className="hidden md:flex absolute items-center"
           style={{ right: '100%', top: '50%', transform: 'translateY(-50%)' }}
         >
           <AnimatePresence>
@@ -90,9 +90,9 @@ export default function Navbar() {
           <span className="block rounded-full bg-white" style={{ width: 22, height: 1.5 }} />
         </button>
 
-        {/* Right links — absolutely anchored to the right edge of the icon wrapper */}
+        {/* Right links — absolutely anchored to the right edge of the icon wrapper (desktop only) */}
         <div
-          className="absolute flex items-center"
+          className="hidden md:flex absolute items-center"
           style={{ left: '100%', top: '50%', transform: 'translateY(-50%)' }}
         >
           <AnimatePresence>
@@ -112,6 +112,29 @@ export default function Navbar() {
                 </motion.div>
               )
             })}
+          </AnimatePresence>
+        </div>
+
+        {/* Mobile dropdown — vertical list centered below the icon, mobile only */}
+        <div
+          className="md:hidden absolute"
+          style={{ top: 'calc(100% + 12px)', left: '50%', transform: 'translateX(-50%)' }}
+        >
+          <AnimatePresence>
+            {isOpen && (
+              <motion.div
+                className="flex flex-col items-center gap-1 rounded-2xl glass-card px-6 py-4"
+                style={{ width: 'max-content', maxWidth: '90vw' }}
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                transition={{ duration: 0.25, ease: 'easeOut' }}
+              >
+                {[...leftLinks, ...rightLinks].map((link) => (
+                  <NavLink key={link.label} link={link} isHome={isHome} onClick={handleNavClick} />
+                ))}
+              </motion.div>
+            )}
           </AnimatePresence>
         </div>
 

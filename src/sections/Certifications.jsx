@@ -7,19 +7,12 @@ export default function Certifications() {
   return (
     <section
       id="certifications"
-      className="relative h-screen overflow-hidden snap-start px-6"
-      style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', width: '100%' }}
+      className="relative h-screen overflow-hidden snap-start px-6 flex flex-col items-center justify-center w-full"
     >
-      <div className="w-full">
-        <div className="mb-5">
-          <SectionLabel label="CREDENTIALS" title="Certifications" center />
-        </div>
+      <SectionLabel label="CREDENTIALS" title="Certifications" center />
 
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', height: '100%' }}>
-          <div style={{ width: '320px' }}>
-            <CertCard cert={certifications[0]} />
-          </div>
-        </div>
+      <div className="w-full max-w-[320px] mx-auto">
+        <CertCard cert={certifications[0]} />
       </div>
     </section>
   )

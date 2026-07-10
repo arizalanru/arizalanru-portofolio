@@ -58,17 +58,17 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="relative h-screen flex items-center overflow-hidden snap-start px-6">
+    <section id="contact" className="relative min-h-screen md:h-screen flex items-center overflow-x-hidden md:overflow-hidden snap-start px-4 md:px-6 pt-[60px] pb-6 md:pt-0 md:pb-0">
       <div className="absolute inset-0 grid-bg opacity-20" />
       <div
         className="absolute bottom-0 left-0 right-0 h-48 pointer-events-none"
         style={{ background: 'linear-gradient(to top, rgba(83,104,120,0.08) 0%, transparent 100%)' }}
       />
 
-      <div className="relative z-10 max-w-6xl mx-auto w-full">
-        <SectionLabel label="LET'S COLLABORATE" title="Get In Touch" center />
+      <div className="relative z-10 max-w-[400px] md:max-w-6xl mx-auto w-full">
+        <SectionLabel label="LET'S COLLABORATE" title="Get In Touch" center titleClassName="text-[32px] md:text-5xl" />
 
-        <div className="grid lg:grid-cols-2 gap-10 mt-2 items-stretch">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-10 mt-2 items-stretch">
 
           {/* Left */}
           <ScrollReveal>
@@ -76,7 +76,11 @@ export default function Contact() {
 
               {/* Solar system */}
               <div className="flex justify-center">
-                <div style={{ position: 'relative', width: 220, height: 220 }}>
+                <div className="relative w-[180px] h-[180px] md:w-[220px] md:h-[220px]">
+                <div
+                  className="scale-[0.8182] md:scale-100 origin-top-left"
+                  style={{ position: 'relative', width: 220, height: 220 }}
+                >
 
                   {/* Center — Mail */}
                   <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', zIndex: 10 }}>
@@ -177,6 +181,7 @@ export default function Contact() {
                   </div>
 
                 </div>
+                </div>
               </div>
 
               {/* Location card */}
@@ -188,8 +193,8 @@ export default function Contact() {
                 </div>
               </div>
 
-              {/* Social buttons 2×2 */}
-              <div className="flex flex-row gap-2">
+              {/* Social buttons — 2×2 grid mobile, row on desktop */}
+              <div className="grid grid-cols-2 md:flex md:flex-row gap-2">
                 {socials.map(({ icon: Icon, label, href }) => (
                   <motion.a
                     key={label}
@@ -303,8 +308,8 @@ export default function Contact() {
         </div>
       </div>
 
-      {/* Back to top */}
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2">
+      {/* Back to top — hidden on mobile */}
+      <div className="hidden md:block absolute bottom-10 left-1/2 -translate-x-1/2">
         <motion.button
           onClick={() => {
             const el = document.querySelector('.snap-y')
