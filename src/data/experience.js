@@ -3,7 +3,7 @@ export const experiences = [
     id: 1,
     institution: 'President University',
     role: 'Computer Science Student',
-    period: '2024 – Present',
+    period: 'Aug 2024 – Present',
     type: 'education',
     icon: '🎓',
     details: [
@@ -32,7 +32,7 @@ export const experiences = [
     id: 3,
     institution: 'PUFA (BEM) Computer Science',
     role: 'Head — Entrepreneurship Division',
-    period: '2025 – Present',
+    period: 'Aug 2025 – Aug 2026',
     type: 'organization',
     icon: '🚀',
     details: [
@@ -50,6 +50,17 @@ export const experiences = [
     details: [
       'Co-founded a digital services team providing web development and digitalization solutions for local SMEs; delivered and maintain a client website for ADA Property.',
       'Led marketing and client relations, driving outreach to prospective SME clients.',
+    ],
+  },
+  {
+    id: 5,
+    institution: 'PT Aisin Indonesia',
+    role: 'Fullstack Developer',
+    period: 'Sep 2026 – Present',
+    type: 'work',
+    details: [
+      'Develop and improve internal systems for the PPIC (Production Planning & Inventory Control) department.',
+      'Build and maintain web applications using PHP (Laravel, CodeIgniter 3) with SQL Server databases.',
     ],
   },
 ]

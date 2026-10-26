@@ -7,6 +7,7 @@ import { experiences } from '../data/experience'
 import puLogo from '../assets/images/President_University_Logo.png'
 import bemLogo from '../assets/images/Logo-PUFA-Compsci.PNG'
 import novotechLogo from '../assets/images/Novotech.jpeg'
+import aisinLogo from '../assets/images/Aisin.png'
 
 export default function Experience() {
   const [openId, setOpenId] = useState(experiences[experiences.length - 1].id)
@@ -38,7 +39,7 @@ export default function Experience() {
 
 function ExperienceItem({ exp, isOpen, onToggle, isFirst, isLast }) {
   const Icon = exp.type === 'education' ? GraduationCap : Briefcase
-  const logoSrc = exp.type === 'education' ? puLogo : exp.type === 'work' ? novotechLogo : bemLogo
+  const logoSrc = exp.type === 'education' ? puLogo : exp.type === 'organization' ? bemLogo : exp.institution === 'Novotech' ? novotechLogo : exp.institution === 'PT Aisin Indonesia' ? aisinLogo : null
 
   return (
     <div className="relative pl-14">
@@ -62,7 +63,13 @@ function ExperienceItem({ exp, isOpen, onToggle, isFirst, isLast }) {
           aria-expanded={isOpen}
         >
           <div className={`flex-shrink-0 w-12 h-12 rounded-xl border border-white/15 p-1 overflow-hidden flex items-center justify-center ${exp.type === 'organization' ? 'bg-neutral-900' : 'bg-white'}`}>
-            <img src={logoSrc} alt={exp.institution} className="w-full h-full object-contain" />
+            {logoSrc ? (
+              <img src={logoSrc} alt={exp.institution} className="w-full h-full object-contain" />
+            ) : (
+              <span className="text-[10px] font-bold text-neutral-800 text-center leading-tight">
+                {exp.institution.replace(/^PT\s+/, '').split(' ')[0].toUpperCase()}
+              </span>
+            )}
           </div>
           <div className="flex-1 min-w-0">
             <p className="text-sm font-semibold text-white truncate">{exp.institution}</p>
